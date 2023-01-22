@@ -34,7 +34,7 @@ export function smartContractLogs(opts: {
       blockIdInput: true,
     },
     input: {
-      default: `proxima.${opts.network}.blocks-sync?height=${startHeight}`
+      default: `proxima.${opts.network}.blocks-sync.1_0?height=${startHeight}`
     },
     output: {
       default: `contracts.${opts.name}.${opts.network}.logs`,
