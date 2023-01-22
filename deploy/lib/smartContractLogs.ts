@@ -9,6 +9,7 @@ export function smartContractLogs(opts: {
   name: string,
   network: Network,
   contracts: Record<string, SmartContract>,
+  version: string,
   startBlock?: number;
 }) {
   if (Object.keys(opts.contracts).length == 0)
@@ -39,7 +40,7 @@ export function smartContractLogs(opts: {
     output: {
       default: `contracts.${opts.name}.${opts.network}.logs`,
     },
-    version: SemVer.parse("0.1.0"),
+    version: SemVer.parse(opts.version),
     tuningArgs: {
       batch: 50,
     },
