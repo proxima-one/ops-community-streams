@@ -642,7 +642,7 @@ aggregate-error@^3.1.0:
     clean-stack "^2.0.0"
     indent-string "^4.0.0"
 
-ajv@^6.12.3:
+ajv@^6.12.3, ajv@^6.12.6:
   version "6.12.6"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.12.6.tgz#baf5a62e802b07d977034586f8c3baf5adf26df4"
   integrity sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==
@@ -2080,6 +2080,13 @@ tr46@~0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/tr46/-/tr46-0.0.3.tgz#8184fd347dac9cdc185992f3a6622e14b9d9ab6a"
   integrity sha1-gYT9NH2snNwYWZLzpmIuFLnZq2o=
+
+ts-json-validator@^0.7.1:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/ts-json-validator/-/ts-json-validator-0.7.1.tgz#418df2630986dfd7534505a064f01947d2f07317"
+  integrity sha512-q0T9FUj41/Nqx4zhSIi9371JR1qlv595Ix5cm+fs3i/XfYDcId0qr6+VcUawpOB9jhU+dQ7lKBIZWzcbN3dnVA==
+  dependencies:
+    ajv "^6.12.6"
 
 ts-node@^7.0.1:
   version "7.0.1"
