@@ -1,7 +1,7 @@
 {
   "name": "community-streams",
   "devDependencies": {
-    "@proxima-one/pulumi-service-apps": "0.3.26",
+    "@proxima-one/pulumi-service-apps": "0.3.28",
     "@pulumi/kubernetes": "^3.23.1",
     "@pulumi/kubernetesx": "^0.1.6",
     "@pulumi/pulumi": "^3.52.0",
