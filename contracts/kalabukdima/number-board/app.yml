@@ -1,0 +1,8 @@
+name: number-board
+network: eth-main
+startBlock: 4562711
+version: 0.1.0
+contracts:
+  weth:
+    address: "0x9249133819102b2ed31680468c8c67F6Fe9E7505"
+    abi: ./number-board.json
