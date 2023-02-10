@@ -26,8 +26,8 @@ export function smartContractLogs(opts: {
     abis[name] = contract.abi;
   }
 
-  const appName = opts.author ? opts.name : `${opts.author}-${opts.name}`;
-  const streamName = opts.author ? opts.name : `${opts.author}.${opts.name}`;
+  const appName = opts.author === undefined ? opts.name : `${opts.author}-${opts.name}`;
+  const streamName = opts.author === undefined ? opts.name : `${opts.author}.${opts.name}`;
 
   return new StreamingApp({
     executable: { image: "quay.io/proxima.one/streaming-app:eth-0.13.1", app: "generic-smart-contract-parser" },
