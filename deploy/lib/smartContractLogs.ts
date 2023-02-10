@@ -7,6 +7,7 @@ export interface SmartContract {
 
 export function smartContractLogs(opts: {
   name: string,
+  author?: string,
   network: Network,
   contracts: Record<string, SmartContract>,
   version: string,
@@ -25,6 +26,9 @@ export function smartContractLogs(opts: {
     abis[name] = contract.abi;
   }
 
+  const appName = opts.author ? opts.name : `${opts.author}-${opts.name}`;
+  const streamName = opts.author ? opts.name : `${opts.author}.${opts.name}`;
+
   return new StreamingApp({
     executable: { image: "quay.io/proxima.one/streaming-app:eth-0.13.1", app: "generic-smart-contract-parser" },
     args: {
@@ -38,13 +42,13 @@ export function smartContractLogs(opts: {
       default: `proxima.${opts.network}.blocks-sync.1_0?height=${startHeight}`
     },
     output: {
-      default: `contracts.${opts.name}.${opts.network}.logs`,
+      default: `contracts.${streamName}.${opts.network}.logs`,
     },
     version: SemVer.parse(opts.version),
     tuningArgs: {
       batch: 50,
     },
-    name: `contracts-${opts.name}-${opts.network}`,
+    name: `contracts-${appName}-${opts.network}`,
     requirements: {
       network: opts.network,
     },

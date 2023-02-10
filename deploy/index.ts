@@ -44,10 +44,9 @@ for (const author of authors) {
       };
     }
 
-    const appName = author == "_" ? appMeta.name : `${author}.${appMeta.name}`;
-
     communityStreams.deploy(smartContractLogs({
-      name: appName,
+      name: appMeta.name,
+      author: author == "_" ? undefined : author,
       network: appMeta.network,
       version: appMeta.version,
       startBlock: appMeta.startBlock,
