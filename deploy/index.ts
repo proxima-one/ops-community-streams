@@ -16,6 +16,15 @@ const communityStreams = new proxima.StreamingAppDeployer({
   availableDbs: coreStreams.getOutput("streamDbs"),
   maxUndoMs: 300 * 1000,
 });
+const communityStreamsCloud = new proxima.StreamingAppDeployer({
+  targetStack: "buh",
+  targetDb: {type: "import-kafka", name: "core-us"},
+  tuningArgs: {batch: 500, readBuffer: 10000},
+  stateManager: {type: "import", name: "state-manager-secondary"},
+  availableDbs: coreStreams.getOutput("streamDbs"),
+  maxUndoMs: 300 * 1000,
+});
+
 
 const contractsPath = path.join(__dirname, "../contracts");
 const authors = fs.readdirSync(contractsPath);
@@ -43,16 +52,26 @@ for (const author of authors) {
         abi: JSON.parse(fs.readFileSync(path.join(appPath, contract.abi)).toString()),
       };
     }
-
-    communityStreams.deploy(smartContractLogs({
-      name: appMeta.name,
-      author: author == "_" ? undefined : author,
-      network: appMeta.network,
-      version: appMeta.version,
-      startBlock: appMeta.startBlock,
-      contracts: contracts
-    }));
+    if (author == "_") {
+      communityStreamsCloud.deploy(smartContractLogs({
+        name: appMeta.name,
+        author: undefined,
+        network: appMeta.network,
+        version: appMeta.version,
+        startBlock: appMeta.startBlock,
+        contracts: contracts
+      }));
+    } else {
+      communityStreams.deploy(smartContractLogs({
+        name: appMeta.name,
+        author,
+        network: appMeta.network,
+        version: appMeta.version,
+        startBlock: appMeta.startBlock,
+        contracts: contracts
+      }));
+    }
   }
 }
 
-export const streamDbs = [communityStreams.getTargetDb()];
+export const streamDbs = [communityStreams.getTargetDb(), communityStreamsCloud.getTargetDb()];
