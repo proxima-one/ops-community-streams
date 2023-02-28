@@ -46,8 +46,8 @@ export function smartContractLogs(opts: {
     },
     version: SemVer.parse(opts.version),
     tuningArgs: {
-      batch: 1500,
-      readBuffer: 3000
+      batch: 500,
+      readBuffer: 1000
     },
     name: `contracts-${appName}-${opts.network}`,
     requirements: {
