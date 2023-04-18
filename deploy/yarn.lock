@@ -259,10 +259,10 @@
     js-yaml "^4.0.0"
     lodash "^4.17.21"
 
-"@proxima-one/pulumi-proxima-node@^0.14.20":
-  version "0.14.20"
-  resolved "https://npm.pkg.github.com/download/@proxima-one/pulumi-proxima-node/0.14.20/983516e550396cde0bdbc49d28bab1f07b645c76#983516e550396cde0bdbc49d28bab1f07b645c76"
-  integrity sha512-kEpqjqFDOKNHQA81/0pLSy16L2qAFhY+/RjvaNasGUQHu5ECWBX/8aQS5I+A3D0+TJQVrHnVxZxheuy7RUyCZw==
+"@proxima-one/pulumi-proxima-node@^0.15.3":
+  version "0.15.3"
+  resolved "https://npm.pkg.github.com/download/@proxima-one/pulumi-proxima-node/0.15.3/d5da5b296517d321806db2219d0f1387fb384291#d5da5b296517d321806db2219d0f1387fb384291"
+  integrity sha512-kmDG5VB1TGLhYqGhM8FkA/yawEHFy+h207EOOmAwWXkgJ+shDHMC9hRpBt7x8cObU96viig5U6HGEd0EhHjkJQ==
   dependencies:
     "@kubernetes/client-node" "^0.16.1"
     "@proxima-one/proxima-config" "0.3.1-preview.eb64fb9.0+eb64fb9"
@@ -276,13 +276,13 @@
     js-yaml "^4.1.0"
     lodash "^4.17.21"
 
-"@proxima-one/pulumi-service-apps@0.3.28":
-  version "0.3.28"
-  resolved "https://npm.pkg.github.com/download/@proxima-one/pulumi-service-apps/0.3.28/0531c9bbf73614f7e2dd0df3b89d5df37f32e391#0531c9bbf73614f7e2dd0df3b89d5df37f32e391"
-  integrity sha512-jCeNXZMhvsQWbZbwcd5y0rAEIWpyi5XsObHthth2T7bFF6K9LBVE6qkCDxVoTwzN93jVBUGEZu29cFSAT/jyRg==
+"@proxima-one/pulumi-service-apps@0.4.2":
+  version "0.4.2"
+  resolved "https://npm.pkg.github.com/download/@proxima-one/pulumi-service-apps/0.4.2/f15b6fb971829174c742bd716877e6b26f6e6771#f15b6fb971829174c742bd716877e6b26f6e6771"
+  integrity sha512-QhFO1d9iwVIZ2XaR25wc5RNk94sQk9XRiLu6Lq1lzU3MXMYMWSTwnzgVZnxtnnMWEtpci7sMAJ4FU5cEvgslXQ==
   dependencies:
     "@proxima-one/pulumi-k8s-app-stack" "^0.1.11"
-    "@proxima-one/pulumi-proxima-node" "^0.14.20"
+    "@proxima-one/pulumi-proxima-node" "^0.15.3"
     "@pulumi/kubernetes" "^3.20.3"
     "@pulumi/kubernetesx" "^0.1.6"
     "@pulumi/pulumi" "^3.37.2"
