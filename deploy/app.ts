@@ -1,9 +1,10 @@
-import { createSchema as S, TsjsonParser, Validated } from "ts-json-validator"
+import { createSchema as S, TsjsonParser } from "ts-json-validator"
 
 const schema = S({
   type: "object",
   properties: {
     "name": S({type: "string"}),
+    "maintainer": S({type: "string"}),
     "version": S({type: "string", pattern: "^[0-9]+\\.[0-9]+\\.[0-9]+$"}),
     "network": S({
       type: "string",
@@ -32,4 +33,3 @@ const schema = S({
 });
 
 export const appParser = new TsjsonParser(schema);
-

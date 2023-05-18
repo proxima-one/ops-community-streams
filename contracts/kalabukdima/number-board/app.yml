@@ -1,4 +1,5 @@
 name: number-board
+maintainer: dima@proxima.one
 network: eth-main
 startBlock: 4562711
 version: 0.1.0
