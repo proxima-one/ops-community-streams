@@ -1,0 +1,9 @@
+name: mangrove-oracle
+maintainer: peter@mangrove.exchange
+network: polygon-mumbai
+startBlock: 35665998
+version: 0.1.0
+contracts:
+  mgvOracle:
+    address: "0x8F8ff080cA0554b02BFC36A5aD465954416271eF"
+    abi: ./MgvOracle.json
