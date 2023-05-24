@@ -42,14 +42,14 @@ export function smartContractLogs(opts: {
       default: `proxima.${opts.network}.blocks-sync.1_0?height=${startHeight}`
     },
     output: {
-      default: `contracts.${streamName}.${opts.network}.logs`,
+      default: `parse.${streamName}.${opts.network}.logs`,
     },
     version: SemVer.parse(opts.version),
     tuningArgs: {
       batch: 500,
       readBuffer: 1000
     },
-    name: `contracts-${appName}-${opts.network}`,
+    name: `contracts-${appName}`,
     requirements: {
       network: opts.network,
     },
