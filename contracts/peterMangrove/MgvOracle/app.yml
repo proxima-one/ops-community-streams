@@ -1,4 +1,4 @@
-name: mangroce-oracle
+name: mangrove-oracle
 maintainer: peter@mangrove.exchange
 network: polygon-mumbai
 startBlock: 35665998
