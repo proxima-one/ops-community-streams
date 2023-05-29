@@ -30,7 +30,7 @@ export function smartContractLogs(opts: {
   const streamName = opts.author === undefined ? opts.name : `${opts.author}.${opts.name}`;
 
   return new StreamingApp({
-    executable: { image: "quay.io/proxima.one/streaming-app:eth-0.13.1", app: "generic-smart-contract-parser" },
+    executable: { image: "quay.io/proxima.one/streaming-app:eth-0.14.1", app: "generic-smart-contract-parser" },
     args: {
       network: opts.network,
       startBlock: startBlock,
